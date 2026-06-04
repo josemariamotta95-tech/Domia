@@ -623,26 +623,28 @@
                 <div id="formContent">
                     <h2 class="form-title">Solicitá información</h2>
                     <p class="form-subtitle">Estamos en etapa de lanzamiento en Uruguay. Dejanos tus datos y un asesor de Domia se contacta con vos para explicarte cómo funciona y darte un presupuesto a medida.</p>
-                    <form id="leadForm" action="https://formspree.io/f/mojzvwyq" method="POST" onsubmit="handleSubmit(event)">
+                    <form id="leadForm" action="https://formspree.io/f/mojzvwyq" method="POST">
+                        <input type="hidden" name="_next" value="https://domia.com.uy/?gracias=1">
+                        <input type="hidden" name="_subject" value="Nuevo lead — Domia">
                         <div class="form-group">
                             <label class="form-label" for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" class="form-input" required placeholder="Tu nombre">
+                            <input type="text" id="nombre" name="nombre" class="form-input" required placeholder="Tu nombre">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" class="form-input" required placeholder="09X XXX XXX">
+                            <input type="tel" id="telefono" name="telefono" class="form-input" required placeholder="09X XXX XXX">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">Email *</label>
-                            <input type="email" id="email" class="form-input" required placeholder="tu@email.com">
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="tu@email.com">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="zona">Barrio o zona *</label>
-                            <input type="text" id="zona" class="form-input" required placeholder="Ej: Pocitos, Carrasco...">
+                            <input type="text" id="zona" name="zona" class="form-input" required placeholder="Ej: Pocitos, Carrasco...">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="servicio">Tipo de servicio *</label>
-                            <select id="servicio" class="form-select" required>
+                            <select id="servicio" name="servicio" class="form-select" required>
                                 <option value="">Seleccioná una opción</option>
                                 <option value="domestico">Servicio doméstico</option>
                                 <option value="porteria">Servicio de portería</option>
@@ -651,7 +653,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="horas">Horas estimadas por semana</label>
-                            <select id="horas" class="form-select">
+                            <select id="horas" name="horas" class="form-select">
                                 <option value="">Seleccioná una opción</option>
                                 <option value="1-10">1 a 10 horas</option>
                                 <option value="10-20">10 a 20 horas</option>
@@ -662,7 +664,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="comentarios">Comentarios (opcional)</label>
-                            <textarea id="comentarios" class="form-textarea" placeholder="Contanos más sobre lo que necesitás..."></textarea>
+                            <textarea id="comentarios" name="comentarios" class="form-textarea" placeholder="Contanos más sobre lo que necesitás..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary form-submit">Quiero recibir información</button>
                         <div class="form-security">
