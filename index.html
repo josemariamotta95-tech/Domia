@@ -758,26 +758,7 @@
             header.style.boxShadow = window.pageYOffset > 100 ? '0 4px 20px rgba(0,0,0,0.08)' : 'none';
         });
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            const form = document.getElementById('leadForm');
-            const data = new FormData(form);
-            fetch('https://formspree.io/f/mojzvwyq', {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('formContent').style.display = 'none';
-                    document.getElementById('formSuccess').classList.add('show');
-                    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    alert('Hubo un error. Por favor intentá de nuevo.');
-                }
-            }).catch(() => {
-                alert('Hubo un error de conexión. Por favor intentá de nuevo.');
-            });
-        }
+
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
